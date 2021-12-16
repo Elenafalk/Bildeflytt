@@ -105,6 +105,8 @@ while True:
             print("Du har ikke valgt en mappe du vil flytte bildene til.")
         elif values["-FROM-"] == values["-TO-"]:
             print("Til- og fra-mappe må være forskjellig.")
+        elif not os.path.isdir(values["-TO-"]):
+            print("Ikke gyldig til-mappe. Velg en annen mappe.")
         else:
             rename_images(values["-FROM-"], values["-TO-"])
 
